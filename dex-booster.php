@@ -28,6 +28,13 @@ add_shortcode('dex-booster', function ($attributes) {
     wp_enqueue_script('datatables');
 
     wp_enqueue_script('dex-booster', plugin_dir_url(__FILE__) . 'dex-booster.js?token=' . time(), null, null, true);
+    wp_localize_script(
+        'dex-booster',
+        'dex_booster',
+        array(
+            'arbitrum_json_url' => site_url('wp-json/dex-booster/v1/arbitrum?&cache-breaker=' . time()),
+        )
+    );
 
     return "
         <table id='henri-dex-booster'>

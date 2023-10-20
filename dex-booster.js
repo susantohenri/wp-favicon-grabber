@@ -1,7 +1,8 @@
 const dt = new DataTable(jQuery(`[id="henri-dex-booster"]`), {
     serverSide: true,
+    processing: true,
     ajax: {
-        url: `wp-json/dex-booster/v1/arbitrum`,
+        url: dex_booster.arbitrum_json_url,
         type: `POST`
     }
 })
